@@ -1,0 +1,3 @@
+This is an example
+it needs to contain multiple lines
+So it does
