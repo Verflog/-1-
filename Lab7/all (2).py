@@ -1,16 +1,16 @@
-# cook your dish here
 class Employee:
     def __init__(self, name, emp_id):
         self.name = name
         self.emp_id = emp_id
+        pass
 
     def get_info(self):
         return f"Сотрудник: {self.name}, ID: {self.emp_id}"
 
 
 class Manager(Employee):
-    def __init__(self, name, emp_id, department):
-        super().__init__(name, emp_id)
+    def __init__(self, name, emp_id, department, *args):
+        super().__init__(name, emp_id, *args)
         self.department = department
 
     def manage_project(self, project_name):
@@ -27,7 +27,7 @@ class Technician(Employee):
 
 
 class TechManager(Manager, Technician):
-    def __init__(self, name, emp_id, department, specialization):
+    def __init__(self, name, emp_id, department=None, specialization=None, *args):
         Manager.__init__(self, name, emp_id, department)
         Technician.__init__(self, name, emp_id, specialization)
 
