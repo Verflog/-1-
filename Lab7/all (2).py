@@ -28,9 +28,8 @@ class Technician(Employee):
 
 class TechManager(Manager, Technician):
     def __init__(self, name, emp_id, department=None, specialization=None, *args):
-        Manager.__init__(self, name, emp_id, department)
-        Technician.__init__(self, name, emp_id, specialization)
-
+        super().__init__(name, emp_id, department, specialization)
+        
     def get_tech_manager_info(self):
         return f"{self.get_info()}, Отдел: {self.department}, Специализация: {self.specialization}"
 
